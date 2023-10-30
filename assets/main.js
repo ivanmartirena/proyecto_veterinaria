@@ -27,30 +27,25 @@ window.onload = function () {
   }
   /**Funciones que detiene el carrousel automatico */
 
-  $botonPausa.addEventListener('click', () => { 
-
-    if($iconoPausa.className == "fas fa-pause"){
+  $botonPausa.addEventListener("click", () => {
+    if ($iconoPausa.className == "fas fa-pause") {
       detenerCarruselAutomatico();
-      $iconoPausa.className ="fas fa-play";
-  
-    }else if($iconoPausa.className == "fas fa-play"){
+      $iconoPausa.className = "fas fa-play";
+    } else if ($iconoPausa.className == "fas fa-play") {
       iniciarCarruselAutomatico();
-      $iconoPausa.className="fas fa-pause";
-
+      $iconoPausa.className = "fas fa-pause";
     }
-  
   });
-  
+
   function detenerCarruselAutomatico() {
     clearInterval(intervalo);
   }
 
-
-  $botonAvanzar.addEventListener('click', () => {
+  $botonAvanzar.addEventListener("click", () => {
     pasarFoto();
     // detenerCarruselAutomatico();
   });
-  $botonRetroceder.addEventListener('click', () => {
+  $botonRetroceder.addEventListener("click", () => {
     retrocederFoto();
     detenerCarruselAutomatico();
   });
@@ -84,7 +79,22 @@ window.onload = function () {
   }
 
   // Eventos
-
+  
+  //MENU MOBILE
+  if (screen.width < 767) {
+    let $botonMenu = document.querySelector("#icono_menu");
+    let $icono_menu = document.querySelector("#bar_menu");
+    $botonMenu.addEventListener("click", () => {
+      let $menu = document.querySelector("#nav_menu");
+      if ($icono_menu.className == "fas fa-bars") {
+        $menu.style.display = "block";
+        $icono_menu.className = "fas fa-close";
+      } else if ($icono_menu.className == "fas fa-close") {
+        $icono_menu.className = "fas fa-bars";
+        $menu.style.display = "none";
+      }
+    });
+  }
 
   // Iniciar
   renderizarImagen();

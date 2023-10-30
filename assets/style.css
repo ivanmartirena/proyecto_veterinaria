@@ -3,13 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
   font-family: "Poppins", sans-serif;
-}
-html {
-  scroll-behavior: smooth;
   -webkit-user-select: none;
   -webkit-user-zoom: none;
   -webkit-user-modify: none;
+}
+html {
+  scroll-behavior: smooth;
 }
 :root {
   --color_principal: rgba(33, 107, 192, 0.767);
@@ -20,7 +21,7 @@ html {
 
 /*Laptop u PC*/
 @media only screen and (orientation: landscape) {
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1024px) {
     body {
       background-color: #e7e7e763;
       width: 100vw;
@@ -43,7 +44,9 @@ html {
       display: flex;
       padding: 0px 20px;
     }
-
+    .icono_menu_mobile {
+      display: none;
+    }
     .logo {
       display: flex;
       align-items: center;
@@ -147,8 +150,8 @@ html {
       margin: 10px;
       opacity: 40%;
     }
-    button#pausa{
-        margin: auto;
+    button#pausa {
+      margin: auto;
     }
     button#retroceder {
       position: absolute;
@@ -167,5 +170,301 @@ html {
       background-color: rgb(151, 112, 112);
       overflow: hidden;
     }
+  }
+}
+/*Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  body {
+    background-color: #ffffff63;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  header {
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    position: -webkit-sticky;
+    background-color: rgba(233, 230, 230, 0.521);
+    overflow: hidden;
+  }
+
+  .container__header {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    padding: 0px 20px;
+  }
+  .icono_menu_mobile {
+    display: none;
+
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 100%;
+    padding: 5px;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+  }
+
+  .menu nav {
+    margin: 0px;
+  }
+
+  .menu nav ul {
+    display: flex;
+  }
+
+  .menu nav ul li {
+    list-style: none;
+    margin: 20px 16px;
+  }
+  .menu nav ul > .inicio__activo {
+    border-bottom: 1px solid var(--color_secundario);
+  }
+  .menu nav ul li a {
+    color: var(--color_texto);
+    font-size: 16px;
+    position: relative;
+  }
+  .menu > .socialMedia{
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    gap: 20px;
+  }
+    /*Carrousel */
+    #carrousel {
+      width: 100%;
+      height: 430px;
+      background-color: rgb(172, 170, 170);
+      margin: auto;
+      overflow: hidden;
+    }
+    #carrousel > #imagen {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #descripcion {
+      position: absolute;
+      width: 90%;
+      height: 200px;
+      color: var(--color_texto);
+      text-align: center;
+      font-size: 30px;
+      top: 55vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgb(255, 255, 255);
+      box-shadow: 0px 2px 10px 0px black;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+  }
+    
+    /*CONTROLES DEL CARROUSEL*/
+    .carrousel__control {
+      display: flex;
+      align-items: center;
+      background-color: rgb(255 255 255);
+      position: absolute;
+      width: 90%;
+      height: 40px;
+      top: 50vh;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0px 2px 10px 0px black ;
+    }
+  
+    #retroceder,
+    #avanzar,
+    #pausa {
+      width: 30px;
+      height: 30px;
+      border: 0;
+      font-size: 2rem;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      opacity: 40%;
+    }
+    button#pausa {
+      margin: auto;
+    }
+    button#retroceder {
+      position: absolute;
+      left: 0;
+    }
+    button#avanzar {
+      position: absolute;
+      right: 0;
+    }
+
+}
+
+/*Celular*/
+@media screen and (max-width: 767px) {
+  body {
+    background-color: #ffffff63;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  header {
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    position: -webkit-sticky;
+    background-color: rgba(233, 230, 230, 0.521);
+    overflow: hidden;
+  }
+
+  .container__header {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    padding: 0px 20px;
+  }
+  .icono_menu_mobile {
+    display: block;
+    position: absolute;
+    margin-top: 20px;
+    right: 10px;
+    float: right;
+    font-size: 30px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 100%;
+    padding: 5px;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+
+  .menu > nav {
+    background-color: #777b7d;
+    width: 100vw;
+    height: fit-content;
+    display: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    font-size: 20px;
+    padding: 5px;
+  }
+  .menu > nav > ul {
+    gap: 10px;
+  }
+  .menu > .socialMedia{
+    font-size: 20px;
+    position: absolute;
+    right: 60px;
+    display: flex;
+    gap: 20px;
+  }
+  /*Carrousel */
+  #carrousel {
+    width: 100%;
+    height: 210px;
+    background-color: rgb(172, 170, 170);
+    margin: auto;
+    overflow: hidden;
+  }
+  #carrousel > #imagen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #descripcion {
+    position: absolute;
+    width: 90%;
+    height: 200px;
+    color: var(--color_texto);
+    text-align: center;
+    font-size: 30px;
+    top: 335px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 2px 10px 0px black;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+  
+  /*CONTROLES DEL CARROUSEL*/
+  .carrousel__control {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255 255 255);
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    top: 291px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 2px 10px 0px black ;
+  }
+
+  #retroceder,
+  #avanzar,
+  #pausa {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    font-size: 2rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    opacity: 40%;
+  }
+  button#pausa {
+    margin: auto;
+  }
+  button#retroceder {
+    position: absolute;
+    left: 0;
+  }
+  button#avanzar {
+    position: absolute;
+    right: 0;
   }
 }
