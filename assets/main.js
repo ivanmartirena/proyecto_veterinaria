@@ -87,11 +87,11 @@ window.onload = function () {
     $botonMenu.addEventListener("click", () => {
       let $menu = document.querySelector("#nav_menu");
       if ($icono_menu.className == "fas fa-bars") {
-        $menu.style.display = "block";
+        $menu.style.display="flex";;
         $icono_menu.className = "fas fa-close";
       } else if ($icono_menu.className == "fas fa-close") {
         $icono_menu.className = "fas fa-bars";
-        $menu.style.display = "none";
+        $menu.style.display="none";;
       }
     });
   }
