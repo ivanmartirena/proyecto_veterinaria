@@ -79,20 +79,19 @@ window.onload = function () {
   }
 
   // Eventos
-  
-  alert(screen.width);
+
   //MENU MOBILE
-  if (screen.width < 767) {
+  if (window.matchMedia("(max-width: 767px)")) {
     let $botonMenu = document.querySelector("#icono_menu");
     let $icono_menu = document.querySelector("#bar_menu");
     $botonMenu.addEventListener("click", () => {
       let $menu = document.querySelector("#nav_menu");
       if ($icono_menu.className == "fas fa-bars") {
-        $menu.style.display="flex";;
+        $menu.style.display = "flex";
         $icono_menu.className = "fas fa-close";
       } else if ($icono_menu.className == "fas fa-close") {
         $icono_menu.className = "fas fa-bars";
-        $menu.style.display="none";;
+        $menu.style.display = "none";
       }
     });
   }
