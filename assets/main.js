@@ -80,6 +80,7 @@ window.onload = function () {
 
   // Eventos
   
+  alert(screen.width);
   //MENU MOBILE
   if (screen.width < 767) {
     let $botonMenu = document.querySelector("#icono_menu");
