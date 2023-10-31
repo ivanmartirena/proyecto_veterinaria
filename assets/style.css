@@ -149,7 +149,9 @@ html {
       align-items: center;
       justify-content: center;
       margin: 10px;
-      opacity: 40%;
+      opacity: 50%;
+      background-color: transparent;
+      
     }
     button#pausa {
       margin: auto;
@@ -325,6 +327,7 @@ html {
       justify-content: center;
       margin: 10px;
       opacity: 40%;
+      background-color: transparent;
     }
     button#pausa {
       margin: auto;
@@ -511,7 +514,8 @@ html {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    opacity: 40%;
+    opacity: 20%;
+    background-color: transparent;
   }
   button#pausa {
     margin: auto;
