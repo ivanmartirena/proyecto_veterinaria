@@ -17,6 +17,7 @@ html {
   --color_secundario: green;
   --color_texto: #777b7d;
   --color_texto_hover: rgba(33, 107, 192, 0.767);
+  --color_titulo_footer: #3d4246;
 }
 
 /*Laptop u PC*/
@@ -164,11 +165,25 @@ html {
     button:hover {
       cursor: pointer;
     }
-    .container-2 {
+    /*Pie de pagina*/
+    footer{
       width: 100vw;
-      height: 100vh;
-      background-color: rgb(151, 112, 112);
-      overflow: hidden;
+      height: 600px;
+      background-color: rgba(240, 240, 240, 0.644);
+      margin-top: 20px;
+      padding: 20px 0 20px;
+    }
+    footer > .contenido_footer{
+      width: 100%;
+      height: 100%;
+      padding-left: 55px;
+      padding-right: 55px;
+    }
+    footer > .contenido_footer > p.titulo{
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color_titulo_footer);
     }
   }
 }
@@ -249,6 +264,10 @@ html {
     gap: 20px;
   }
     /*Carrousel */
+    .contenedor_carrousel{
+      width: 100%;
+      height: 70vh;
+    }
     #carrousel {
       width: 100%;
       height: 430px;
@@ -318,6 +337,26 @@ html {
       position: absolute;
       right: 0;
     }
+        /*Pie de pagina*/
+    footer{
+      width: 100vw;
+      height: 600px;
+      background-color: rgba(240, 240, 240, 0.644);
+      margin-top: 20px;
+      padding: 20px 0 20px;
+    }
+    footer > .contenido_footer{
+      width: 100%;
+      height: 100%;
+      padding-left: 55px;
+      padding-right: 55px;
+    }
+    footer > .contenido_footer > p.titulo{
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color_titulo_footer);
+    }
 
 }
 
@@ -335,9 +374,9 @@ html {
     width: 100%;
     height: 80px;
     z-index: 100;
-    position: -webkit-sticky;
+   
     background-color: rgba(233, 230, 230, 0.521);
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .container__header {
@@ -346,6 +385,7 @@ html {
     margin: auto;
     display: flex;
     padding: 0px 20px;
+    
   }
   .icono_menu_mobile {
     display: block;
@@ -371,12 +411,13 @@ html {
     display: flex;
     align-items: center;
     margin: auto;
+    
   }
 
   .menu > nav {
     background-color: #e5e5e5c4;
     width: 100vw;
-    height: fit-content;
+    height: 300px;
     display: none;
     text-align: center;
     align-items: center;
@@ -386,13 +427,16 @@ html {
     left: 0;
     font-size: 20px;
     padding: 5px;
-    z-index: 1;
     box-shadow: 0px 1px 5px 0px black;
+    z-index: 1;
+    
   }
   .menu > nav > ul {
     gap: 20px;
     display: flex;
     flex-direction: column;
+    
+    
   }
   .menu > nav > ul > li > a{
     color: var(--color_texto);
@@ -405,18 +449,23 @@ html {
     gap: 20px;
   }
   /*Carrousel */
+  .contenedor_carrousel{
+    width: 100%;
+    height: 70vh;
+  }
   #carrousel {
     width: 100%;
     height: 210px;
     background-color: rgb(172, 170, 170);
-    margin: auto;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   #carrousel > #imagen {
+    z-index: -10;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+   
   }
   #descripcion {
     position: absolute;
@@ -425,14 +474,15 @@ html {
     color: var(--color_texto);
     text-align: center;
     font-size: 30px;
-    top: 335px;
+    top: 325px;
     left: 50%;
     transform: translateX(-50%);
     background: rgb(255, 255, 255);
-    box-shadow: 0px 2px 10px 0px black;
+
     display: flex;
     align-items: center;
     padding: 10px;
+   
 }
   
   /*CONTROLES DEL CARROUSEL*/
@@ -443,10 +493,10 @@ html {
     position: absolute;
     width: 90%;
     height: 40px;
-    top: 291px;
+    top: 281px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0px 2px 10px 0px black ;
+    
   }
 
   #retroceder,
@@ -474,4 +524,24 @@ html {
     position: absolute;
     right: 0;
   }
+      /*Pie de pagina*/
+      footer{
+        width: 100vw;
+        height: 600px;
+        background-color: rgba(240, 240, 240, 0.644);
+        margin-top: 20px;
+        padding: 20px 0 20px;
+      }
+      footer > .contenido_footer{
+        width: 100%;
+        height: 100%;
+        padding-left: 55px;
+        padding-right: 55px;
+      }
+      footer > .contenido_footer > p.titulo{
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--color_titulo_footer);
+      }
 }

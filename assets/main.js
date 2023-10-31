@@ -89,6 +89,7 @@ window.onload = function () {
       if ($icono_menu.className == "fas fa-bars") {
         $menu.style.display = "flex";
         $icono_menu.className = "fas fa-close";
+        $icono_menu.style.zIndex="100";
       } else if ($icono_menu.className == "fas fa-close") {
         $icono_menu.className = "fas fa-bars";
         $menu.style.display = "none";
