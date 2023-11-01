@@ -14,109 +14,100 @@ window.onload = function () {
   let $descripcion = document.querySelector("#descripcion");
 
   let intervalo;
-  if(window.location.pathname=="/index.html"){
+  if (window.location.pathname == "/index.html") {
+    // Funciones del Carrousel
 
+    /*Carrousel automatico */
+    function iniciarCarruselAutomatico() {
+      intervalo = setInterval(pasarFoto, 3000); // 3000 milisegundos = 3 segundos
+    }
+    /*Funcion que detiene el carrousel automatico  */
+    function detenerCarruselAutomatico() {
+      clearInterval(intervalo);
+    }
+    /**Funciones que detiene el carrousel automatico */
 
-  
-  // Funciones del Carrousel
+    $botonPausa.addEventListener("click", () => {
+      if ($iconoPausa.className == "fas fa-pause") {
+        detenerCarruselAutomatico();
+        $iconoPausa.className = "fas fa-play";
+      } else if ($iconoPausa.className == "fas fa-play") {
+        iniciarCarruselAutomatico();
+        $iconoPausa.className = "fas fa-pause";
+      }
+    });
 
-  /*Carrousel automatico */
-  function iniciarCarruselAutomatico() {
-    intervalo = setInterval(pasarFoto, 3000); // 3000 milisegundos = 3 segundos
-  }
-  /*Funcion que detiene el carrousel automatico  */
-  function detenerCarruselAutomatico() {
-    clearInterval(intervalo);
-  }
-  /**Funciones que detiene el carrousel automatico */
+    function detenerCarruselAutomatico() {
+      clearInterval(intervalo);
+    }
 
-  $botonPausa.addEventListener("click", () => {
-    if ($iconoPausa.className == "fas fa-pause") {
+    $botonAvanzar.addEventListener("click", () => {
+      pasarFoto();
+      // detenerCarruselAutomatico();
+    });
+    $botonRetroceder.addEventListener("click", () => {
+      retrocederFoto();
       detenerCarruselAutomatico();
-      $iconoPausa.className = "fas fa-play";
-    } else if ($iconoPausa.className == "fas fa-play") {
-      iniciarCarruselAutomatico();
-      $iconoPausa.className = "fas fa-pause";
+    });
+
+    /*Funcion que cambia la foto en la siguiente posicion */
+    function pasarFoto() {
+      if (posicionActual >= IMAGENES.length - 1) {
+        posicionActual = 0;
+      } else {
+        posicionActual++;
+      }
+      renderizarImagen();
     }
-  });
 
-  function detenerCarruselAutomatico() {
-    clearInterval(intervalo);
-  }
-
-  $botonAvanzar.addEventListener("click", () => {
-    pasarFoto();
-    // detenerCarruselAutomatico();
-  });
-  $botonRetroceder.addEventListener("click", () => {
-    retrocederFoto();
-    detenerCarruselAutomatico();
-  });
-
-  /*Funcion que cambia la foto en la siguiente posicion */
-  function pasarFoto() {
-    if (posicionActual >= IMAGENES.length - 1) {
-      posicionActual = 0;
-    } else {
-      posicionActual++;
+    /*Funcion que cambia la foto en la anterior posicion */
+    function retrocederFoto() {
+      if (posicionActual <= 0) {
+        posicionActual = IMAGENES.length - 1;
+      } else {
+        posicionActual--;
+      }
+      renderizarImagen();
     }
-    renderizarImagen();
-  }
 
-  /*Funcion que cambia la foto en la anterior posicion */
-  function retrocederFoto() {
-    if (posicionActual <= 0) {
-      posicionActual = IMAGENES.length - 1;
-    } else {
-      posicionActual--;
+    /**
+     * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+     */
+    function renderizarImagen() {
+      $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
+      $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
     }
-    renderizarImagen();
-  }
-
-  /**
-   * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
-   */
-  function renderizarImagen() {
-    $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
-    $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
-  }
 
     // Iniciar
-  renderizarImagen();
-  iniciarCarruselAutomatico()
+    renderizarImagen();
+    iniciarCarruselAutomatico();
   }
-  
 
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
     let $botonMenu = document.querySelector("#icono_menu");
     let $icono_menu = document.querySelector("#bar_menu");
     $botonMenu.addEventListener("click", () => {
-      let $menu = document.getElementById("nav_menu");
+      let $menu = document.getElementById("menu");
       if ($icono_menu.className == "fas fa-bars") {
-        $menu.style.display = "flex";
+        
         $icono_menu.className = "fas fa-close";
-        $icono_menu.style.zIndex="100";
+        $icono_menu.style.zIndex = "100";
+        $menu.style.display = "flex";
         $menu.classList.add("animate__animated", "animate__slideInDown");
-      } else if ($icono_menu.className == "fas fa-close") {
-        
-        $menu.classList.remove("animate__animated", "animate__slideInDown");
-        
-          $icono_menu.className = "fas fa-bars";
-          $menu.classList.add("animate__animated", "animate__fadeOutUp");
-          setTimeout(function(){
 
-            $menu.style.display = "none";
-          }, 2000);
-         
-        
-        
+      } else if ($icono_menu.className == "fas fa-close") {
+        $menu.classList.remove("animate__animated", "animate__slideInDown");
+
+        $icono_menu.className = "fas fa-bars";
+        $menu.classList.add("animate__animated", "animate__fadeOutUp");
+        setTimeout(function () {
+          $menu.style.display = "none";
+        }, 2000);
       }
     });
   } else {
     $icono_menu.className = "fas fa-bars";
     $menu.style.display = "none";
   }
-
-;
 };
