@@ -454,7 +454,9 @@ html {
     
     
   }
-
+  .menu > nav > ul > .inicio__activo {
+    border-bottom: 1px solid var(--color_secundario);
+  }
 
   .menu > nav > ul {
     gap: 20px;
