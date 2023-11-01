@@ -14,7 +14,10 @@ window.onload = function () {
   let $descripcion = document.querySelector("#descripcion");
 
   let intervalo;
+  if(window.location.pathname=="/index.html"){
 
+
+  
   // Funciones del Carrousel
 
   /*Carrousel automatico */
@@ -78,7 +81,11 @@ window.onload = function () {
     $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
   }
 
-  // Eventos
+    // Iniciar
+  renderizarImagen();
+  iniciarCarruselAutomatico()
+  }
+  
 
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
@@ -90,10 +97,20 @@ window.onload = function () {
         $menu.style.display = "flex";
         $icono_menu.className = "fas fa-close";
         $icono_menu.style.zIndex="100";
-      } else if ($icono_menu.className == "fas fa-close") {
-        $icono_menu.className = "fas fa-bars";
-        $menu.style.display = "none";
         $menu.classList.add("animate__animated", "animate__slideInDown");
+      } else if ($icono_menu.className == "fas fa-close") {
+        
+        $menu.classList.remove("animate__animated", "animate__slideInDown");
+        
+          $icono_menu.className = "fas fa-bars";
+          $menu.classList.add("animate__animated", "animate__fadeOutUp");
+          setTimeout(function(){
+
+            $menu.style.display = "none";
+          }, 2000);
+         
+        
+        
       }
     });
   } else {
@@ -101,7 +118,5 @@ window.onload = function () {
     $menu.style.display = "none";
   }
 
-  // Iniciar
-  renderizarImagen();
-  iniciarCarruselAutomatico();
+;
 };
