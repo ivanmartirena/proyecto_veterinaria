@@ -78,12 +78,9 @@ window.onload = function () {
     $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
   }
 
-  // Iniciar
-  renderizarImagen();
-  iniciarCarruselAutomatico();
-}else{
 
-}
+} //else{alert("ERROR");}
+ 
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
     let $botonMenu = document.querySelector("#icono_menu");
@@ -109,4 +106,7 @@ window.onload = function () {
     $icono_menu.className = "fas fa-bars";
     $menu.style.display = "none";
   }
+    // Iniciar
+    renderizarImagen();
+    iniciarCarruselAutomatico();
 };
