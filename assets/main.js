@@ -78,7 +78,7 @@ window.onload = function () {
     $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
   }
   renderizarImagen();
-  iniciarCarruselAutomatico()
+  iniciarCarruselAutomatico();
 
 } //else{alert("ERROR");}
  
@@ -108,5 +108,5 @@ window.onload = function () {
     $menu.style.display = "none";
   }
     // Iniciar
-;
+
 };
