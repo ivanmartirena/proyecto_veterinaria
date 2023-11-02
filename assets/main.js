@@ -38,15 +38,18 @@ window.onload = function () {
   function detenerCarruselAutomatico() {
     clearInterval(intervalo);
   }
-
+  if ($botonAvanzar) {
   $botonAvanzar.addEventListener("click", () => {
     pasarFoto();
     // detenerCarruselAutomatico();
   });
+}
+if($botonRetroceder){
   $botonRetroceder.addEventListener("click", () => {
     retrocederFoto();
     detenerCarruselAutomatico();
   });
+}
 
   /*Funcion que cambia la foto en la siguiente posicion */
   function pasarFoto() {
