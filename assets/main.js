@@ -15,7 +15,7 @@ window.onload = function () {
   let $descripcion = document.querySelector("#descripcion");
 
   // Funciones del Carrousel
-  if (document.location.pathname == "/index.html") {
+  
     /*Carrousel automatico */
     function iniciarCarruselAutomatico() {
       intervalo = setInterval(pasarFoto, 3000); // 3000 milisegundos = 3 segundos
@@ -75,9 +75,7 @@ window.onload = function () {
       $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
       $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
     }
-    renderizarImagen();
-    iniciarCarruselAutomatico();
-  } //else{alert("ERROR");}
+
 
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
