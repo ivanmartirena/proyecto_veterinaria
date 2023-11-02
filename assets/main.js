@@ -100,9 +100,8 @@ window.onload = function () {
 
         $icono_menu.className = "fas fa-bars";
         $menu.classList.add("animate__animated", "animate__fadeOutUp");
-        setTimeout(function () {
           $menu.style.display = "none";
-        }, 2000);
+       
       }
     });
   } else {
