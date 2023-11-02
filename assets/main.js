@@ -33,23 +33,23 @@ window.onload = function () {
         $iconoPausa.className = "fas fa-pause";
       }
     });
-  }
+  
   /*Funcion que detiene el carrousel automatico  */
   function detenerCarruselAutomatico() {
     clearInterval(intervalo);
   }
-  if ($botonAvanzar) {
+  
   $botonAvanzar.addEventListener("click", () => {
     pasarFoto();
     // detenerCarruselAutomatico();
   });
-}
-if($botonRetroceder){
+
+
   $botonRetroceder.addEventListener("click", () => {
     retrocederFoto();
     detenerCarruselAutomatico();
   });
-}
+
 
   /*Funcion que cambia la foto en la siguiente posicion */
   function pasarFoto() {
@@ -78,7 +78,10 @@ if($botonRetroceder){
     $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
     $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
   }
-
+    // Iniciar
+    iniciarCarruselAutomatico();
+    renderizarImagen();
+  }
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
     let $botonMenu = document.querySelector("#icono_menu");
@@ -106,7 +109,5 @@ if($botonRetroceder){
     $icono_menu.className = "fas fa-bars";
     $menu.style.display = "none";
   }
-  // Iniciar
-  iniciarCarruselAutomatico();
-  renderizarImagen();
+
 };
