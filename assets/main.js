@@ -4,6 +4,7 @@ window.onload = function () {
     ["img/dog-838281_1280.jpg", "LOS MEJORES PRODUCTOS A UN SOLO CLICK"],
     ["img/cat-4988408_1280.jpg", "GRAN VARIEDAD DE PRODUCTOS Y ACCESORIOS"],
   ];
+
   const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
   let posicionActual = 0;
   let $botonRetroceder = document.querySelector("#retroceder");
@@ -15,73 +16,69 @@ window.onload = function () {
 
   // Funciones del Carrousel
   if (document.location.pathname == "/index.html") {
-  /*Carrousel automatico */
-  function iniciarCarruselAutomatico() {
-    intervalo = setInterval(pasarFoto, 3000); // 3000 milisegundos = 3 segundos
-  }
-  /*Funcion que detiene el carrousel automatico  */
-  function detenerCarruselAutomatico() {
-    clearInterval(intervalo);
-  }
-  console.log(document.location.pathname);
-  /**Funciones que detiene el carrousel automatico */
+    /*Carrousel automatico */
+    function iniciarCarruselAutomatico() {
+      intervalo = setInterval(pasarFoto, 3000); // 3000 milisegundos = 3 segundos
+    }
 
-    $botonPausa.addEventListener("click", () => {
-      if ($iconoPausa.className == "fas fa-pause") {
-        detenerCarruselAutomatico();
-        $iconoPausa.className = "fas fa-play";
-      } else if ($iconoPausa.className == "fas fa-play") {
-        iniciarCarruselAutomatico();
-        $iconoPausa.className = "fas fa-pause";
-      }
+    /**Funciones que detiene el carrousel automatico */
+    if ($botonPausa) {
+      $botonPausa.addEventListener("click", () => {
+        if ($iconoPausa.className == "fas fa-pause") {
+          detenerCarruselAutomatico();
+          $iconoPausa.className = "fas fa-play";
+        } else if ($iconoPausa.className == "fas fa-play") {
+          iniciarCarruselAutomatico();
+          $iconoPausa.className = "fas fa-pause";
+        }
+      });
+    }
+
+    /*Funcion que detiene el carrousel automatico  */
+    function detenerCarruselAutomatico() {
+      clearInterval(intervalo);
+    }
+
+    $botonAvanzar.addEventListener("click", () => {
+      pasarFoto();
+      // detenerCarruselAutomatico();
     });
-  
-  
-  function detenerCarruselAutomatico() {
-    clearInterval(intervalo);
-  }
+    $botonRetroceder.addEventListener("click", () => {
+      retrocederFoto();
+      detenerCarruselAutomatico();
+    });
 
-  $botonAvanzar.addEventListener("click", () => {
-    pasarFoto();
-    // detenerCarruselAutomatico();
-  });
-  $botonRetroceder.addEventListener("click", () => {
-    retrocederFoto();
-    detenerCarruselAutomatico();
-  });
+    /*Funcion que cambia la foto en la siguiente posicion */
+    function pasarFoto() {
+      if (posicionActual >= IMAGENES.length - 1) {
+        posicionActual = 0;
+      } else {
+        posicionActual++;
+      }
+      renderizarImagen();
+    }
 
-  /*Funcion que cambia la foto en la siguiente posicion */
-  function pasarFoto() {
-    if (posicionActual >= IMAGENES.length - 1) {
-      posicionActual = 0;
-    } else {
-      posicionActual++;
+    /*Funcion que cambia la foto en la anterior posicion */
+    function retrocederFoto() {
+      if (posicionActual <= 0) {
+        posicionActual = IMAGENES.length - 1;
+      } else {
+        posicionActual--;
+      }
+      renderizarImagen();
+    }
+
+    /**
+     * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+     */
+    function renderizarImagen() {
+      $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
+      $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
     }
     renderizarImagen();
-  }
+    iniciarCarruselAutomatico();
+  } //else{alert("ERROR");}
 
-  /*Funcion que cambia la foto en la anterior posicion */
-  function retrocederFoto() {
-    if (posicionActual <= 0) {
-      posicionActual = IMAGENES.length - 1;
-    } else {
-      posicionActual--;
-    }
-    renderizarImagen();
-  }
-
-  /**
-   * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
-   */
-  function renderizarImagen() {
-    $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
-    $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
-  }
-  renderizarImagen();
-  iniciarCarruselAutomatico();
-
-} //else{alert("ERROR");}
- 
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
     let $botonMenu = document.querySelector("#icono_menu");
@@ -107,6 +104,5 @@ window.onload = function () {
     $icono_menu.className = "fas fa-bars";
     $menu.style.display = "none";
   }
-    // Iniciar
-
+  // Iniciar
 };
