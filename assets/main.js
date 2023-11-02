@@ -33,10 +33,7 @@ window.onload = function () {
         $iconoPausa.className = "fas fa-pause";
       }
     });
-  }else{
-    alert($botonPausa);
   }
-
   /*Funcion que detiene el carrousel automatico  */
   function detenerCarruselAutomatico() {
     clearInterval(intervalo);
