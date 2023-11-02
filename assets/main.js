@@ -14,7 +14,7 @@ window.onload = function () {
   let $descripcion = document.querySelector("#descripcion");
 
   let intervalo;
-  
+
     // Funciones del Carrousel
 
     /*Carrousel automatico */
@@ -78,8 +78,8 @@ window.onload = function () {
       $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
     }
 
-    // Iniciar
-
+  
+  
 
   //MENU MOBILE
   if (window.matchMedia("(max-width: 760px)")) {
@@ -108,8 +108,7 @@ window.onload = function () {
     $icono_menu.className = "fas fa-bars";
     $menu.style.display = "none";
   }
-  
-  renderizarImagen();
-  iniciarCarruselAutomatico();
-
+   // Iniciar
+   renderizarImagen();
+   iniciarCarruselAutomatico();
 };
