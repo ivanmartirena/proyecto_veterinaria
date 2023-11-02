@@ -77,7 +77,8 @@ window.onload = function () {
     $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual][0]})`;
     $descripcion.innerText = `${IMAGENES[posicionActual][1]}`;
   }
-
+  renderizarImagen();
+  iniciarCarruselAutomatico()
 
 } //else{alert("ERROR");}
  
@@ -107,6 +108,5 @@ window.onload = function () {
     $menu.style.display = "none";
   }
     // Iniciar
-    renderizarImagen();
-    iniciarCarruselAutomatico();
+;
 };
