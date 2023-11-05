@@ -85,7 +85,7 @@ window.onload = function () {
     let $botonMenu = document.querySelector("#icono_menu");
     let $icono_menu = document.querySelector("#bar_menu");
     $botonMenu.addEventListener("click", () => {
-      let $menu = document.getElementById("menu");
+    let $menu = document.getElementById("menu");
 
       if ($icono_menu.className == "fas fa-bars") {
         //Icono de abrir menu
