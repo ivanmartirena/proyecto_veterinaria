@@ -84,21 +84,49 @@ window.onload = function () {
   if (window.matchMedia("(max-width: 760px)")) {
     let $botonMenu = document.querySelector("#icono_menu");
     let $icono_menu = document.querySelector("#bar_menu");
-    $botonMenu.addEventListener("click", () => {
-    let $menu = document.getElementById("menu");
+    let $containerAll = document.querySelector(".container_all");
+    let $containerAllCatalogo = document.querySelector(".container_all_catalogo");
+    let $containerCarrousel = document.querySelector(".contenedor_carrousel");
 
+    $botonMenu.addEventListener("click", () => {
+      let $menu = document.getElementById("menu");
+
+      //Icono de abrir menu
       if ($icono_menu.className == "fas fa-bars") {
-        //Icono de abrir menu
-        $icono_menu.className = "fas fa-close";
+        $menu.classList.remove("animate__animated", "animate__slideOutLeft");
+        setTimeout(() => {
+          $icono_menu.className = "fas fa-close";
+          $icono_menu.style.color = "white";
+        }, "0500");
         $icono_menu.style.zIndex = "100";
         $menu.style.display = "flex";
-        $menu.classList.add("animate__animated", "animate__slideInDown", "animate__faster");
+        $menu.classList.add(
+          "animate__animated",
+          "animate__slideInLeft",
+          "animate__faster"
+        );
+
+       
+        $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
+        if ($containerCarrousel){
+          $containerAll.classList.toggle("container_all_opacidad");
+        $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+        }
       } else if ($icono_menu.className == "fas fa-close") {
-        //Icono para cerrar menu
-        $menu.classList.remove("animate__animated", "animate__slideInDown");
-        $menu.classList.add("animate__animated", "animate__fadeOutUp");
+        //Icono para cerrar menu removeProperty
+
+        $menu.classList.remove("animate__animated", "animate__slideInLeft");
+        $menu.classList.add("animate__animated", "animate__slideOutLeft");
         $icono_menu.className = "fas fa-bars";
+        $icono_menu.style.color = "black";
+
         $menu.style.display = "none";
+        if ($containerCarrousel){
+        $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+           $containerAll.classList.toggle("container_all_opacidad");
+        }
+        $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
+     
       }
     });
   } else {

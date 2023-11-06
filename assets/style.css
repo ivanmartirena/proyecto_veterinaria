@@ -150,7 +150,6 @@ html {
       margin: 10px;
       opacity: 50%;
       background-color: transparent;
-      
     }
     button#pausa {
       margin: auto;
@@ -166,46 +165,45 @@ html {
     button:hover {
       cursor: pointer;
     }
-  /*CATALOGO*/
-  hr{
-    opacity: 30%;
-  }
-  div.contenedor_catalogo{
-    width: 100%;
-    height: 80vh;
-    overflow-x: hidden;
-  }
-  .titulo_catalogo{
-    text-align: center;
-    color: var(--color_titulo_footer);
-    font-weight: 800;
-  }
+    /*CATALOGO*/
+    hr {
+      opacity: 30%;
+    }
+    div.contenedor_catalogo {
+      width: 100%;
+      height: 80vh;
+      overflow-x: hidden;
+    }
+    .titulo_catalogo {
+      text-align: center;
+      color: var(--color_titulo_footer);
+      font-weight: 800;
+    }
 
     /*Pie de pagina*/
-    footer{
+    footer {
       width: 100vw;
       height: 600px;
       background-color: rgba(240, 240, 240, 0.644);
       margin-top: 20px;
       padding: 20px 0 20px;
     }
-    footer > .contenido_footer{
+    footer > .contenido_footer {
       width: 100%;
       height: 100%;
       padding-left: 55px;
       padding-right: 55px;
     }
-    footer > .contenido_footer > p.titulo{
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
+    footer > .contenido_footer > p.titulo {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-size: 20px;
       font-weight: 600;
       color: var(--color_titulo_footer);
     }
   }
-
 }
 /*Tablet*/
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   body {
     background-color: #ffffff63;
     width: 100vw;
@@ -233,7 +231,6 @@ html {
   }
   .icono_menu_mobile {
     display: none;
-
   }
   .logo {
     display: flex;
@@ -275,7 +272,7 @@ html {
     font-size: 16px;
     position: relative;
   }
-  .socialMedia{
+  .socialMedia {
     font-size: 20px;
     position: relative;
     right: 10px;
@@ -283,102 +280,101 @@ html {
     gap: 20px;
     margin: auto 0;
   }
-    /*Carrousel */
-    .contenedor_carrousel{
-      width: 100%;
-      height: 70vh;
-    }
-    #carrousel {
-      width: 100%;
-      height: 430px;
-      background-color: rgb(172, 170, 170);
-      margin: auto;
-      overflow: hidden;
-    }
-    #carrousel > #imagen {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    #descripcion {
-      position: absolute;
-      width: 90%;
-      height: 200px;
-      color: var(--color_texto);
-      text-align: center;
-      font-size: 30px;
-      top: 55vh;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgb(255, 255, 255);
-      box-shadow: 0px 2px 10px 0px black;
-      display: flex;
-      align-items: center;
-      padding: 10px;
+  /*Carrousel */
+  .contenedor_carrousel {
+    width: 100%;
+    height: 70vh;
   }
-    
-    /*CONTROLES DEL CARROUSEL*/
-    .carrousel__control {
-      display: flex;
-      align-items: center;
-      background-color: rgb(255 255 255);
-      position: absolute;
-      width: 90%;
-      height: 40px;
-      top: 50vh;
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0px 2px 10px 0px black ;
-    }
-  
-    #retroceder,
-    #avanzar,
-    #pausa {
-      width: 30px;
-      height: 30px;
-      border: 0;
-      font-size: 2rem;
-      display: flex;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      margin: 10px;
-      opacity: 40%;
-      background-color: transparent;
-    }
-    button#pausa {
-      margin: auto;
-    }
-    button#retroceder {
-      position: absolute;
-      left: 0;
-    }
-    button#avanzar {
-      position: absolute;
-      right: 0;
-    }
-        /*Pie de pagina*/
-    footer{
-      width: 100vw;
-      height: 600px;
-      background-color: rgba(240, 240, 240, 0.644);
-      margin-top: 20px;
-      padding: 20px 0 20px;
-    }
-    footer > .contenido_footer{
-      width: 100%;
-      height: 100%;
-      padding-left: 55px;
-      padding-right: 55px;
-    }
-    footer > .contenido_footer > p.titulo{
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--color_titulo_footer);
-    }
+  #carrousel {
+    width: 100%;
+    height: 430px;
+    background-color: rgb(172, 170, 170);
+    margin: auto;
+    overflow: hidden;
+  }
+  #carrousel > #imagen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #descripcion {
+    position: absolute;
+    width: 90%;
+    height: 200px;
+    color: var(--color_texto);
+    text-align: center;
+    font-size: 30px;
+    top: 55vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 2px 10px 0px black;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
 
+  /*CONTROLES DEL CARROUSEL*/
+  .carrousel__control {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255 255 255);
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 2px 10px 0px black;
+  }
+
+  #retroceder,
+  #avanzar,
+  #pausa {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    font-size: 2rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    opacity: 40%;
+    background-color: transparent;
+  }
+  button#pausa {
+    margin: auto;
+  }
+  button#retroceder {
+    position: absolute;
+    left: 0;
+  }
+  button#avanzar {
+    position: absolute;
+    right: 0;
+  }
+  /*Pie de pagina*/
+  footer {
+    width: 100vw;
+    height: 600px;
+    background-color: rgba(240, 240, 240, 0.644);
+    margin-top: 20px;
+    padding: 20px 0 20px;
+  }
+  footer > .contenido_footer {
+    width: 100%;
+    height: 100%;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  footer > .contenido_footer > p.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color_titulo_footer);
+  }
 }
 
 /*Celular*/
@@ -405,7 +401,6 @@ html {
     margin: auto;
     display: flex;
     padding: 0px 20px;
-    
   }
   .icono_menu_mobile {
     display: block;
@@ -429,29 +424,24 @@ html {
     padding: 5px;
   }
   .menu {
-    background-color: #e5e5e5c4;
+    background-color: rgb(231, 231, 231);
     margin: auto;
-    width: 100vw;
-    height: 200px;
-    top: 80px;
+    width: 85vw;
+    height: 100%;
     overflow: hidden;
     position: absolute;
     left: 0;
     display: none;
-    /* z-index: 1; */
-    
+    z-index: 10;
+    padding: 10px;
   }
-    .menu > nav {
+  .menu > nav {
     width: 100%;
     height: 100%;
     text-align: center;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    padding: 5px;
-
-    
-    
   }
   .menu > nav > ul > .inicio__activo {
     border-bottom: 1px solid var(--color_secundario);
@@ -459,15 +449,16 @@ html {
 
   .menu > nav > ul {
     gap: 20px;
+    position: relative;
+
     display: flex;
+    /* border: 1px solid; */
     flex-direction: column;
-    
-    
   }
-  .menu > nav > ul > li > a{
+  .menu > nav > ul > li > a {
     color: var(--color_texto);
   }
-  .socialMedia{
+  .socialMedia {
     font-size: 20px;
     position: relative;
     left: 100px;
@@ -475,8 +466,23 @@ html {
     display: flex;
     gap: 20px;
   }
+  /*Al abrir menu oscurezco todo lo demas*/
+  .container_all, .container_all_catalogo {
+    width: 100vw;
+    height: 100vh;
+  }
+  .container_all_opacidad {
+    transition: 1s ease-out;
+    background-color: rgba(0, 0, 0, 0.747);
+    position: absolute;
+    top: 0;
+  }
+  .contenedor_carrousel_position {
+    position: absolute;
+    z-index: -1;
+  }
   /*Carrousel */
-  .contenedor_carrousel{
+  .contenedor_carrousel {
     width: 100%;
     height: 70vh;
   }
@@ -484,24 +490,21 @@ html {
     width: 100%;
     height: 210px;
     background-color: rgb(172, 170, 170);
-    overflow-x: hidden;
   }
   #carrousel > #imagen {
-    z-index: -10;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
-   
   }
   #descripcion {
-    position: absolute;
+    position: relative;
     width: 90%;
     height: 200px;
     color: var(--color_texto);
     text-align: center;
     font-size: 30px;
-    top: 325px;
+    top: 30vh;
     left: 50%;
     transform: translateX(-50%);
     background: rgb(255, 255, 255);
@@ -509,9 +512,8 @@ html {
     display: flex;
     align-items: center;
     padding: 10px;
-   
-}
-  
+  }
+
   /*CONTROLES DEL CARROUSEL*/
   .carrousel__control {
     display: flex;
@@ -520,10 +522,9 @@ html {
     position: absolute;
     width: 90%;
     height: 40px;
-    top: 281px;
+    top: 32vh;
     left: 50%;
     transform: translateX(-50%);
-    
   }
 
   #retroceder,
@@ -552,24 +553,44 @@ html {
     position: absolute;
     right: 0;
   }
-      /*Pie de pagina*/
-      footer{
-        width: 100vw;
-        height: 600px;
-        background-color: rgba(240, 240, 240, 0.644);
-        margin-top: 20px;
-        padding: 20px 0 20px;
-      }
-      footer > .contenido_footer{
-        width: 100%;
-        height: 100%;
-        padding-left: 55px;
-        padding-right: 55px;
-      }
-      footer > .contenido_footer > p.titulo{
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-        color: var(--color_titulo_footer);
-      }
+  /*CATALOGO*/
+  .container_all_catalogo_opacidad {
+    transition: opacity 3s ease;
+    background-color: rgba(0, 0, 0, 0.747);
+    position: absolute;
+    top: 0;
+  }
+  hr {
+    opacity: 30%;
+  }
+  div.contenedor_catalogo {
+    width: 100%;
+    height: 80vh;
+    overflow-x: hidden;
+  }
+  .titulo_catalogo {
+    text-align: center;
+    color: var(--color_titulo_footer);
+    font-weight: 800;
+  }
+  /*Pie de pagina*/
+  footer {
+    width: 100vw;
+    height: 600px;
+    background-color: rgba(240, 240, 240, 0.644);
+    margin-top: 20px;
+    padding: 20px 0 20px;
+  }
+  footer > .contenido_footer {
+    width: 100%;
+    height: 100%;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  footer > .contenido_footer > p.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color_titulo_footer);
+  }
 }
