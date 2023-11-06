@@ -85,7 +85,9 @@ window.onload = function () {
     let $botonMenu = document.querySelector("#icono_menu");
     let $icono_menu = document.querySelector("#bar_menu");
     let $containerAll = document.querySelector(".container_all");
-    let $containerAllCatalogo = document.querySelector(".container_all_catalogo");
+    let $containerAllCatalogo = document.querySelector(
+      ".container_all_catalogo"
+    );
     let $containerCarrousel = document.querySelector(".contenedor_carrousel");
 
     $botonMenu.addEventListener("click", () => {
@@ -106,20 +108,26 @@ window.onload = function () {
           "animate__faster"
         );
 
-       if($containerAllCatalogo){
-         $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
-       }
+        if ($containerAllCatalogo) {
+          $containerAllCatalogo.classList.toggle(
+            "container_all_catalogo_opacidad"
+          );
+        }
 
-        if ($containerCarrousel){
-          if($containerAll.classList.contains("container_all_opacidad")){
+        if ($containerCarrousel) {
+          /*Agrego validacion de que si ya tienen la clase
+           al redirigir a una pagina se las quito*/
+          if ($containerAll.classList.contains("container_all_opacidad")) {
             $containerAll.classList.toggle("container_all_opacidad");
-            $containerCarrousel.classList.toggle("contenedor_carrousel_position");
-          }else{
-             $containerAll.classList.toggle("container_all_opacidad");
-             $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+            $containerCarrousel.classList.toggle(
+              "contenedor_carrousel_position"
+            );
+          } else {
+            $containerAll.classList.toggle("container_all_opacidad");
+            $containerCarrousel.classList.toggle(
+              "contenedor_carrousel_position"
+            );
           }
-         
-        
         }
       } else if ($icono_menu.className == "fas fa-close") {
         //Icono para cerrar menu removeProperty
@@ -130,15 +138,16 @@ window.onload = function () {
         $icono_menu.style.color = "black";
 
         $menu.style.display = "none";
-        if ($containerCarrousel){
-        $containerCarrousel.classList.toggle("contenedor_carrousel_position");
-           $containerAll.classList.toggle("container_all_opacidad");
+        if ($containerCarrousel) {
+          $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+          $containerAll.classList.toggle("container_all_opacidad");
         }
-        
-        if($containerAllCatalogo){
-          $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
+
+        if ($containerAllCatalogo) {
+          $containerAllCatalogo.classList.toggle(
+            "container_all_catalogo_opacidad"
+          );
         }
- 
       }
     });
   } else {

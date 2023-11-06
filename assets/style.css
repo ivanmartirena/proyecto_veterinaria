@@ -169,15 +169,30 @@ html {
     hr {
       opacity: 30%;
     }
+
     div.contenedor_catalogo {
       width: 100%;
-      height: 80vh;
+      margin: auto;
       overflow-x: hidden;
     }
     .titulo_catalogo {
       text-align: center;
       color: var(--color_titulo_footer);
       font-weight: 800;
+    }
+    .contenedor_producto{
+      padding: 0 30px 10px;
+      margin-top: 2vh;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;    
+    }
+    .card_producto{
+      width: 250px;
+      height: 400px;
+      box-shadow: 0px 0px 2px 0px  black;
     }
 
     /*Pie de pagina*/
@@ -565,13 +580,33 @@ html {
   }
   div.contenedor_catalogo {
     width: 100%;
-    height: 80vh;
+    height: 100%;
     overflow-x: hidden;
   }
   .titulo_catalogo {
     text-align: center;
     color: var(--color_titulo_footer);
     font-weight: 800;
+  }
+  .contenedor_producto{
+    padding: 0 10px 10px;
+    margin-top: 2vh;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;    
+    overflow-x: hidden;
+    scrollbar-width: none;
+    overflow-y: scroll;
+  }
+  .contenedor_producto::-webkit-scrollbar {
+    display: none;
+  }
+  .card_producto{
+    width: 170px;
+    height: 240px;
+    box-shadow: 0px 0px 2px 0px  black;
   }
   /*Pie de pagina*/
   footer {
