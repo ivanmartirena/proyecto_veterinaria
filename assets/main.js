@@ -106,11 +106,20 @@ window.onload = function () {
           "animate__faster"
         );
 
-       
-        $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
+       if($containerAllCatalogo){
+         $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
+       }
+
         if ($containerCarrousel){
-          $containerAll.classList.toggle("container_all_opacidad");
-        $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+          if($containerAll.classList.contains("container_all_opacidad")){
+            $containerAll.classList.toggle("container_all_opacidad");
+            $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+          }else{
+             $containerAll.classList.toggle("container_all_opacidad");
+             $containerCarrousel.classList.toggle("contenedor_carrousel_position");
+          }
+         
+        
         }
       } else if ($icono_menu.className == "fas fa-close") {
         //Icono para cerrar menu removeProperty
@@ -125,8 +134,11 @@ window.onload = function () {
         $containerCarrousel.classList.toggle("contenedor_carrousel_position");
            $containerAll.classList.toggle("container_all_opacidad");
         }
-        $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
-     
+        
+        if($containerAllCatalogo){
+          $containerAllCatalogo.classList.toggle("container_all_catalogo_opacidad");
+        }
+ 
       }
     });
   } else {
