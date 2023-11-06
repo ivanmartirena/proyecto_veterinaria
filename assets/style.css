@@ -520,9 +520,9 @@ html {
     gap: 20px;
   }
   /*Al abrir menu oscurezco todo lo demas*/
-  .container_all, .container_all_catalogo {
+  .container_all {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
   }
   .container_all_opacidad {
     transition: 1s ease-out;
@@ -607,6 +607,11 @@ html {
     right: 0;
   }
   /*CATALOGO*/
+  .container_all_catalogo{
+    width: 100%;
+    height: max-content;
+    overflow-x: hidden;
+  }
   .container_all_catalogo_opacidad {
     transition: opacity 3s ease;
     background-color: rgba(0, 0, 0, 0.747);
@@ -618,8 +623,8 @@ html {
   }
   div.contenedor_catalogo {
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
+    border: 1px solid;
   }
   .titulo_catalogo {
     text-align: center;
@@ -634,13 +639,10 @@ html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;    
-    overflow-x: hidden;
-    scrollbar-width: none;
-    overflow-y: scroll;
+    overflow: hidden;
+
   }
-  .contenedor_producto::-webkit-scrollbar {
-    display: none;
-  }
+
   .card_producto{
     width: 170px;
     height: 240px;
