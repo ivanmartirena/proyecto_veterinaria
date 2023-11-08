@@ -88,6 +88,7 @@ window.onload = function () {
     let $containerAllCatalogo = document.querySelector(
       ".container_all_catalogo"
     );
+    let $container_all_producto = document.querySelector(".container_all_producto");
     let $containerCarrousel = document.querySelector(".contenedor_carrousel");
 
     $botonMenu.addEventListener("click", () => {
@@ -112,6 +113,9 @@ window.onload = function () {
           $containerAllCatalogo.classList.toggle(
             "container_all_catalogo_opacidad"
           );
+        }
+        if($container_all_producto){
+          $container_all_producto.classList.toggle("container_all_producto_opacidad");
         }
 
         if ($containerCarrousel) {

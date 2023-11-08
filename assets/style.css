@@ -850,6 +850,12 @@ html {
     text-transform: uppercase;
   }
   /*Contenedor de Producto a comprar*/
+    .container_all_producto_opacidad {
+    transition: opacity 3s ease;
+    background-color: rgba(0, 0, 0, 0.747);
+    position: absolute;
+    top: 0;
+  }
   div.container_all_producto {
     width: 100%;
     overflow: hidden;
