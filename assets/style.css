@@ -490,6 +490,7 @@ html {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    justify-items: center;
     overflow-x: hidden;
     scrollbar-width: none;
     overflow-y: scroll;
