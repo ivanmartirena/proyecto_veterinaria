@@ -44,7 +44,7 @@ html {
       height: 100%;
       margin: auto;
       display: flex;
-      padding: 0px 20px;
+      padding: 0px 60px;
       align-items: center;
     }
     .icono_menu_mobile {
@@ -205,7 +205,7 @@ html {
       color: black;
       text-transform: uppercase;
     }
-    /*Contenedor de Producto seleccionado*/
+    /*Contenedor de Producto a comprar*/
     div.container_all_producto{
       width: 100vw;
       overflow: hidden;
@@ -214,7 +214,7 @@ html {
       width: 90vw;
       padding: 10px;
       overflow-x: hidden;
-      border: 5px solid;
+      /* border: 5px solid; */
       margin: auto;
       display: flex;
       gap: 10px;
@@ -222,7 +222,7 @@ html {
     div.producto_seleccionado > .img_producto {
       width: 40%;
       height: 500px;
-      border: 2px solid blue;
+      /* border: 2px solid blue; */
       overflow: hidden;
     }
     div.producto_seleccionado > .img_producto > img {
@@ -259,6 +259,7 @@ html {
       background-color: #557b97;
       color: #fff;
       appearance: none;
+      font-weight: 700;
       border: 1px solid transparent;
     }
     .container_button > button.agregar_carrito {
@@ -266,6 +267,16 @@ html {
       color: #557b97;
       border-color: #557b97;
     }
+        .container_button > button.agregar_carrito:hover{
+          color: #3a576b;
+          cursor: pointer;
+    }
+    .container_button > button.comprar_ahora:hover{
+      background-color: #3b607a;
+      color: #fff;
+      cursor: pointer;
+    }
+
   .descripcion_producto{
     width: 80%;
     margin-top: 8rem;
