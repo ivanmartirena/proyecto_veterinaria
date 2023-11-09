@@ -746,11 +746,10 @@ html {
     color: var(--color_texto);
     text-align: center;
     font-size: 30px;
-    top: 30vh;
+    top: 200px;
     left: 50%;
     transform: translateX(-50%);
     background: rgb(255, 255, 255);
-
     display: flex;
     align-items: center;
     padding: 10px;
@@ -760,12 +759,12 @@ html {
   .carrousel__control {
     display: flex;
     align-items: center;
-    background-color: rgb(255 255 255);
+    /* background-color: rgb(255 255 255); */
     position: absolute;
-    width: 90%;
-    height: 40px;
-    margin-top: 24vh;
-    margin-left: 5%;
+    width: 100%;
+    height: 180px;
+    margin-top: 10px;
+  
   }
 
   #retroceder,
@@ -780,19 +779,25 @@ html {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    opacity: 20%;
+    color: rgba(0, 0, 0, 0.5);
     background-color: transparent;
   }
   button#pausa {
     margin: auto;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.185);
   }
   button#retroceder {
     position: absolute;
     left: 0;
+    height: 180px;
   }
   button#avanzar {
     position: absolute;
     right: 0;
+    height: 180px;
   }
   /*CATALOGO*/
   .container_all_catalogo {
