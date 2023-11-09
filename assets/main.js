@@ -166,6 +166,7 @@ window.onload = function () {
   } else {
     $icono_menu.className = "fas fa-bars";
     $menu.style.display = "none";
+
   }
 
 

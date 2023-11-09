@@ -712,7 +712,7 @@ html {
   /*Al abrir menu oscurezco todo lo demas*/
   .container_all {
     width: 100vw;
-    height: 80%;
+    height: 100%;
   }
   .container_all_opacidad {
     transition: 1s ease-out;
