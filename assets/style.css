@@ -700,16 +700,18 @@ html {
   }
   .socialMedia {
     font-size: 20px;
-    position: relative;
-    left: 100px;
-    margin: auto 0;
+    position: absolute;
+    right: 57px;
+    height: 80px;
+    margin: auto;
     display: flex;
     gap: 20px;
+    align-items: center;
   }
   /*Al abrir menu oscurezco todo lo demas*/
   .container_all {
     width: 100vw;
-    height: 100%;
+    height: 80%;
   }
   .container_all_opacidad {
     transition: 1s ease-out;
@@ -762,9 +764,8 @@ html {
     position: absolute;
     width: 90%;
     height: 40px;
-    top: 32vh;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 24vh;
+    margin-left: 5%;
   }
 
   #retroceder,
@@ -811,7 +812,6 @@ html {
   div.contenedor_catalogo {
     width: 100%;
     overflow-x: hidden;
-    border: 1px solid;
   }
   .titulo_catalogo {
     text-align: center;
@@ -819,14 +819,14 @@ html {
     font-weight: 800;
   }
   .contenedor_producto {
-    padding: 10px;
     margin-top: 2vh;
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    gap: 5px;
     overflow: hidden;
+    justify-items: center;
   }
 
   .card_producto {
@@ -876,11 +876,9 @@ html {
   }
   div.producto_seleccionado > .img_producto {
     width: 100%;
-    height: 400px;
+    height: 300px;
     /* border: 2px solid blue; */
     overflow: hidden;
-    position: relative;
-    z-index: -1;
   }
   div.producto_seleccionado > .img_producto > img {
     width: 100%;
@@ -914,7 +912,7 @@ html {
     appearance: none;
     font-weight: 700;
     border: 1px solid transparent;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .container_button > button.agregar_carrito {
     background-color: transparent;
@@ -937,12 +935,12 @@ html {
     color: #69727b;
     white-space: pre-line;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   /*Pie de pagina*/
   footer {
-    width: 100vw;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     background-color: rgba(240, 240, 240, 0.644);
     margin-top: 20px;
     padding: 20px 0 20px;
