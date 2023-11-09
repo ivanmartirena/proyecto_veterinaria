@@ -115,7 +115,9 @@ window.onload = function () {
           );
         }
         if($container_all_producto){
+          let $producto_seleccionado = document.querySelector(".producto_seleccionado");
           $container_all_producto.classList.toggle("container_all_producto_opacidad");
+          $producto_seleccionado.classList.toggle("producto_seleccionado_position")
         }
 
         if ($containerCarrousel) {
